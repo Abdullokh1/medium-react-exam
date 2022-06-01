@@ -1,0 +1,33 @@
+.user-avatar-img{
+  border-radius: 50%;
+}
+.offcanva-user-items{
+  position: relative;
+}
+
+.offcanva-user-list{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.reply-box{
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 3px solid #ccc;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  top: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.reply-input{
+  background-color: transparent;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.reply-input::placeholder{
+  color: #B9B9B9;
+}

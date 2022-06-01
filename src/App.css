@@ -1,0 +1,10 @@
+ul{
+  list-style: none;
+}
+button{
+  border: none;
+}
+
+.end-part{
+  min-height: 100%;
+}

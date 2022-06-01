@@ -1,0 +1,143 @@
+.saved-part{
+  margin: 0 auto;
+  width: 70%;
+}
+.save-main-part{
+  margin: 0 auto;
+  width: 73%;
+}
+.new-list-btn{
+  background-color: #1A8917;
+  padding: 9px 20px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+}
+.list-title{
+  font-size: 42px;
+  font-weight: 700;
+}
+.save-list-wrapper{
+  margin: 0 auto;
+  width: 70%;
+  border-bottom: 1px solid #ccc;
+}
+.active-btn{
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+}
+.list-btns{
+  padding-bottom: 20px;
+}
+
+.save-card{
+  margin: 0 auto;
+  width: 70%;
+  height: 174px;
+  background-color: #1A8917;
+  margin-top: 60px;
+  border-radius: 6px;
+  position: relative;
+  padding: 20px;
+}
+.save-card-img{
+ position: absolute;
+ top: 0;
+ right: 50px;
+}
+.save-card-text{
+  font-size: 22px;
+  color: #fff;
+  font-weight: 700;
+  width: 300px;
+}
+.add-save-btn{
+  font-size: 14px;
+}
+.exit-btn{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.save__box{
+  background-color: rgba(250, 250, 250, 1);
+  border-radius: 4px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(230, 230, 230, 1);
+  width: 70%;
+  margin: 0 auto;
+}
+
+.save__box-left{
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.save__box-title{
+  line-height: 28px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: rgba(41, 41, 41, 1);
+}
+
+.save__box-btn-real-box{
+  margin-right: 12px;
+}
+
+.save__box-btn{
+  padding: 4px 12px 6px;
+  color: rgba(41, 41, 41, 1);
+  border-radius: 99em;
+  line-height: 20px;
+  font-size: 14px;
+  border: 1px solid rgba(117, 117, 117, 1);
+}
+
+.save__box-right{
+  width: 294px;
+  border-radius: 0 3px 3px 0;
+  display: flex;
+  height: 166px;
+  margin-left: auto;
+  position: relative;
+}
+
+.save__box-all{
+  height: 166px;
+  width: 166px;
+  border-right: 3px solid rgba(250, 250, 250, 1);
+  background-color: rgba(250, 250, 250, 1);
+  background: #292929;
+  position: absolute;
+}
+
+.save__box-grey{
+  background: #757575;
+  width: 70%;
+  height: 100%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.save__box-one{
+  z-index: 3;
+  border-right: 3px solid rgba(250, 250, 250, 1);
+}
+
+.save__box-two{
+  margin-left: 80px;
+  z-index: 2;
+  border-right: 3px solid rgba(250, 250, 250, 1); 
+}
+
+.save__box-three{
+  margin-left: 130px;
+  z-index: 1;
+  border-right: 3px solid rgba(250, 250, 250, 1);
+}
