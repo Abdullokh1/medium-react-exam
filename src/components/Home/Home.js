@@ -17,6 +17,12 @@ export default function Home({
   addHandler,
   addCardHandler,
   homePublish,
+  isClicked,
+  setClick,
+  userName,
+  lastName,
+  phone,
+  email
 
 }) {
   
@@ -42,7 +48,12 @@ export default function Home({
     <div className='d-flex justify-content-between'>
       <div>
         <nav className='navbar'>
-          <Navbar/>
+          <Navbar
+          userName={userName}
+          lastName={lastName}
+          phone={phone}
+          email={email}
+          />
         </nav>
       </div>
 
@@ -61,6 +72,8 @@ export default function Home({
         addHandler={addHandler}
         addCardHandler={addCardHandler}
         homePublish={homePublish}
+        isClicked={isClicked}
+        setClick={setClick}
         />
       </div>
 

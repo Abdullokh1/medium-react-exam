@@ -5,9 +5,8 @@ import Navbar from '../Home/Navbar/Navbar'
 import ModalAdd from '../ModalAdd/ModalAdd'
 import './SavedPart.scss'
 
-export default function SavedPart({setSaved, isSaved, count,setCount,changeName,setChange, addHandler,addCardHandler}) {
+export default function SavedPart({setSaved, isSaved, count,setCount,changeName,setChange, addHandler,addCardHandler,isClicked,setClick}) {
 
-  let [isClicked, setClick] = useState(false)
 
 
   return (
@@ -51,7 +50,7 @@ export default function SavedPart({setSaved, isSaved, count,setCount,changeName,
         
         {isSaved.map((item, index) =>{
           return (
-            <Link className='text-decoration-none' to={'/InnerInfo'}>
+            <Link className='text-decoration-none' to={`/InnerInfo/${index}`}>
               <div className='save__box d-flex mt-4'>
                 <div className='save__box-left'>
                   <h2 className='save__box-title'>{item.changeName}</h2>

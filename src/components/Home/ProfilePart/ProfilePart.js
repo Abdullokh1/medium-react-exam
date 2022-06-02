@@ -1,10 +1,8 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
-import EndPart from '../../Home/EndPart/EndPart'
-import Navbar from '../../Home/Navbar/Navbar'
-import './InnerInfo.scss'
+import EndPart from '../EndPart/EndPart'
+import Navbar from '../Navbar/Navbar'
 
-export default function InnerInfo({userName,lastName, isSaved}) {
+export default function ProfilePart({userName,lastName}) {
   let SocialIcons = [
     'bx social-icons bxl-twitter',
     'bx social-icons bxl-facebook-circle', 
@@ -14,9 +12,9 @@ export default function InnerInfo({userName,lastName, isSaved}) {
     'bx social-icons bx-dots-horizontal-rounded'
   ]
 
-  let locationId = useLocation()
   return (
-    <div className='d-flex justify-content-between'>
+    <>
+       <div className='d-flex justify-content-between'>
       <div>
         <nav className='navbar'>
           <Navbar/>
@@ -50,19 +48,11 @@ export default function InnerInfo({userName,lastName, isSaved}) {
             })}
           </ul>
         </div>
-        {isSaved.map((item, index) =>{
-          if(index === Number(locationId.pathname.split('/').at(-1))){
-            return (
-              <div className='innerInfo-section mt-5'>
-                <h4 className='mb-4'>{item.changeName}</h4>
-                <img 
-                src="https://picsum.photos/id/3/692/374" 
-                alt="avatar-img" width={692} height={374} />
-              </div>
-            )
-          }
-        })}
-
+          <div className='innerInfo-section mt-5'>
+            <img 
+            src="https://picsum.photos/id/3/692/374" 
+            alt="avatar-img" width={692} height={374} />
+          </div>
       </div>
 
       <div>
@@ -70,5 +60,7 @@ export default function InnerInfo({userName,lastName, isSaved}) {
       </div>
       
     </div>
+    
+    </>
   )
 }

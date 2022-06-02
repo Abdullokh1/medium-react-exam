@@ -43,3 +43,52 @@
   border-radius: 10px;
 }
 
+.nav-user-btn{
+  border-radius: 50%;
+  border: 1px solid #000;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.avatar-user{
+  width: 40px;
+  height: 40px;
+}
+
+.profile-part{
+  position: absolute;
+  width: 280px;
+  height: 450px;
+  background-color: #fff;
+  bottom: 80px;
+  left: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: all 0.5s ease;
+  z-index: 999;
+
+  p{
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+.profile-card{
+  p:last-child{
+    border-bottom: 2px solid rgba(204, 204, 204, 0.532);
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
+  p:not(:last-child){
+    padding: 0 20px;
+  }
+}
+
+.profile-text{
+  border-bottom: 2px solid rgba(204, 204, 204, 0.505);
+  padding: 0 23px;
+  padding-bottom: 20px;
+}
+.email-data{
+  font-size: 13px !important;
+  color: rgb(162, 162, 162);
+}

@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import mainLogo from '../../../assests/Imgs/main-logo.png'
 import './Navbar.scss'
 
-export default function Navbar() {
+export default function Navbar({userName,email, lastName}) {
   let [isClicked, setClick] = useState(false)
 
 
@@ -52,9 +52,44 @@ export default function Navbar() {
     </ul>
 
 
-    <div>
-      <button className='user-btn'>A</button>
-    </div>
+      <div style={{display: isClicked ? 'block' : 'none'}} className='profile-part'>
+        <div className='ps-4 pt-4'>
+          <p>Medium Partner Program</p>
+          <p>Get a membership</p>
+        </div>
+        <p className='text-success profile-text'>Become a member</p>
+
+        <div className=' profile-card'>
+          <p>Sign out</p>
+          <p>Refine recommendations</p>
+          <p>Manage publications</p>
+          <p>Stats</p>
+          <p>Settings</p>
+        </div>
+
+        <div className='d-flex p-3'>
+
+          <Link to={'/ProfilePart'}>
+            <button className='nav-user-btn me-3 avatar-user'>
+              <img className='navbar-user-avatar' 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2pxxgWFt7gjLnC9BqgEIFPPjUxeb8T3EmIg&usqp=CAU"
+              alt="user-avatar" width={25} height='25' />
+            </button> 
+          </Link>
+
+            <div>
+              <p className='m-0  profile-data mb-1'>{userName} {lastName}</p>
+              <p className='email-data'>{email}</p>
+            </div>
+        </div>
+      </div>
+
+      <button onClick={() => setClick(!isClicked)} className='nav-user-btn'>
+        <img className='navbar-user-avatar' 
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2pxxgWFt7gjLnC9BqgEIFPPjUxeb8T3EmIg&usqp=CAU"
+         alt="user-avatar" width={35} height='35' />
+      </button>
+
 
     
     </>

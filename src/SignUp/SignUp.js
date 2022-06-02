@@ -3,11 +3,12 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './_SignUp.scss'
 
-export default function SignUp({}) {
+export default function SignUp({setUserName,setLastName,setPhone,setEmail}) {
 
   let [isValid, setValid] = useState(false)
 
   const addNameHandler = (e) =>{
+    setUserName(e.target.value)
     if(e.target.value.match(/[0-9]/)){
       setValid(isValid = false)
     }
@@ -17,16 +18,18 @@ export default function SignUp({}) {
   }
 
   const addLastNameHandler = (e) =>{
+    setLastName(e.target.value)
     if(e.target.value.match(/[0-9]/)){
       setValid(isValid = false)
     }
     else{
       setValid(isValid = true)
-
+      
     }
   }
 
   const addNumberHanlder = (e) =>{
+    setPhone(e.target.value)
     if(e.target.value.length < 10){
       setValid(isValid = false)
     }
@@ -37,6 +40,7 @@ export default function SignUp({}) {
   }
 
   const addEmailHandler = (e) =>{
+    setEmail(e.target.value)
     if(!e.target.value.match(/[@]/)){
       setValid(isValid = false)
     }
@@ -44,6 +48,8 @@ export default function SignUp({}) {
       setValid(isValid = true)
     }
   }
+
+   
 
   return (
     <>

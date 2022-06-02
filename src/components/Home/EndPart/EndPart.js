@@ -8,7 +8,7 @@ export default function EndPart() {
       <button className='bg-dark text-white end-part__btn mb-5'>Get unlimited access</button>
        <input className='end-part__input ps-4' type="text" placeholder='Search' />
     </div>
-    
+
     </>
   )
 }

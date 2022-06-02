@@ -424,7 +424,7 @@ const data = [
     date: '6 days ago',
     title: 'My Interview Experience at Google.',
     text: 'Google is a dream company of everyone and getting into Google is like a dream come true. I was interviewed by Google for Software Development,University Graduate for Bangalore or Hyderabad role. Though I didn’t clear google but I want to share my Google interview experience , so it can',
-    img: 'https://picsum.photos/id/66/112/112',
+    img: 'https://picsum.photos/id/60/112/112',
     type: 'Frontend',
     userInnerInfo: [
       {

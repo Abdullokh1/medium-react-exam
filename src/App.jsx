@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
-import InnerSection from './components/InnerSection/InnerSection';
 import NoPage from './components/NoPage/NoPage';
 import Publish from './components/Publish/Publish';
 import Stories from './components/Publish/Stories/Stories';
 import InnerInfo from './components/SavedPart/InnerInfo/InnerInfo';
 import SavedPart from './components/SavedPart/SavedPart';
 import SignUp from './SignUp/SignUp';
+import InnerSection from './components/Home/InnerSection/InnerSection'
+import Offcanvas from './components/Offcanvas/Offcanvas';
+import ProfilePart from './components/Home/ProfilePart/ProfilePart';
 
 function App() {
   let [isSaved, setSaved] = useState([])
@@ -17,15 +19,16 @@ function App() {
   let [storyText, setStoryText] = useState([{
     text: 'Publish text'
   }])
+
   let [emptyStory, setEmptyStory] = useState('')
-
   let [homePublish, setHomePublish] = useState([])
-  
+  let [isClicked, setClick] = useState(false)
+
+  let [userName, setUserName] = useState('')
+  let [lastName, setLastName] = useState('')
+  let [email, setEmail] = useState('')
 
 
-
-
-  
   const addHandler = (e) =>{
     setCount(e.target.value.length)
     setChange(e.target.value)
@@ -33,8 +36,8 @@ function App() {
 
   const addCardHandler = () =>{
     setSaved([...isSaved, {changeName: changeName}])
+    setClick(!isClicked)
   }
-
 
   useEffect(() =>{
     setSaved([{
@@ -43,15 +46,17 @@ function App() {
   }, [])
 
 
-
-
-
-
   return (
     <>
     
     <Routes>
-      <Route path={'/'} element={<SignUp/>}/>
+      <Route path={'/'} element={<SignUp
+      setUserName={setUserName}
+      setLastName={setLastName}
+      setEmail={setEmail}
+
+      />}/>
+
       <Route path={'/Home'} element={<Home
       count={count}
       setCount={setCount}
@@ -62,6 +67,11 @@ function App() {
       addHandler={addHandler}
       addCardHandler={addCardHandler}
       homePublish={homePublish}
+      isClicked={isClicked}
+      setClick={setClick}
+      userName={userName}
+      lastName={lastName}
+      email={email}
       />}/>
 
 
@@ -74,13 +84,28 @@ function App() {
       setSaved={setSaved}
       addHandler={addHandler}
       addCardHandler={addCardHandler}
+      isClicked={isClicked}
+      setClick={setClick}
       />}/>
 
-      <Route path={'InnerSection/:id'} element={<InnerSection
-      isSaved={isSaved}
+      <Route path={'InnerSection/:id'} element={<InnerSection 
+      isSaved={isSaved} 
+      homePublish={homePublish}
+      userName={userName}
+      lastName={lastName}
       />}/>
 
       <Route path='*' element={<NoPage/>}/>
+      <Route path='/ProfilePart' element={<ProfilePart
+       userName={userName}
+       lastName={lastName}
+      />}/>
+
+      <Route path='/Offcanvas' element={<Offcanvas
+       userName={userName}
+       lastName={lastName}
+      />}/>
+
 
       <Route path='/Publish' element={<Publish 
       storyText={storyText} 
@@ -89,9 +114,17 @@ function App() {
       setEmptyStory={setEmptyStory}
       setHomePublish={setHomePublish}
       homePublish={homePublish}
+      userName={userName}
+      lastName={lastName}
       />}/>
 
-      <Route path='/InnerInfo' element={<InnerInfo/>}/>
+      <Route path='/InnerInfo/:id' element={<InnerInfo
+      homePublish={homePublish}
+      userName={userName}
+      lastName={lastName}
+      isSaved={isSaved}
+
+      />}/>
 
       <Route path='/Stories' element={<Stories
       storyText={storyText}

@@ -4,8 +4,11 @@ import logo from '../../assests/Imgs/main-logo.png'
 import './Publish.scss'
 import { v4 as uuidv4 } from "uuid";
 
-export default function Publish({storyText, setHomePublish,homePublish, setStoryText,emptyStory,setEmptyStory}) {
+let countId = 300
 
+export default function Publish({storyText, setHomePublish,homePublish, setStoryText,emptyStory,setEmptyStory, userName, lastName}) {
+
+  
 
   const textAreaHandle = (e) =>{
     setEmptyStory(e.target.value)
@@ -18,22 +21,23 @@ export default function Publish({storyText, setHomePublish,homePublish, setStory
       }
     ])
     setEmptyStory('')
-
+    
+    
     setHomePublish([
       ...homePublish, {
-        userName: 'Abdullokh Giyasov',
+        userName: userName + lastName,
         userImg:  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2pxxgWFt7gjLnC9BqgEIFPPjUxeb8T3EmIg&usqp=CAU',
         date: 'June 1',
         title: 'Frontend development',
         text: emptyStory, 
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2pxxgWFt7gjLnC9BqgEIFPPjUxeb8T3EmIg&usqp=CAU',
         type: 'Frontend',
-        id: uuidv4(),
+        id: countId,
       }
     ])
-
-
+    countId++
   }
+
 
 
   return (

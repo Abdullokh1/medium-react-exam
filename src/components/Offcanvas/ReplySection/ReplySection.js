@@ -123,10 +123,10 @@ export default function ReplySection({ el }) {
             </div>
           </div>
         </div>
-        {addReply.map((item) => {
+        {addReply.map((item, i) => {
           return (
             <>
-              <div className="reply-comment-box ">
+              <div key={i} className="reply-comment-box ">
                 <div className="d-flex justify-content-between mt-4 align-items-center">
                   <div className="d-flex align-items-center">
                     <button className="me-3">

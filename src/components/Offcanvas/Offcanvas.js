@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../InnerSection/InnerSection.scss";
+import '../Home/InnerSection/InnerSection.scss'
 import "./Offcanvas.scss";
 import ReplySection from "./ReplySection/ReplySection";
 
@@ -101,11 +101,11 @@ export default function Offcanvas({ showModal, setModal, item }) {
           </div>
           
           <ul className="m-0 p-0 mt-5 pb-4 offcanva-user-list">
-            {offcanvaData.map(el =>{
-              
+            {offcanvaData.map((el, i) =>{
               return (
                 <ReplySection 
                   el={el}
+                  key={i}
                   offcanvaData={offcanvaData} 
                   emptyString={emptyString}
                   addCommentHandle={addCommentHandle}

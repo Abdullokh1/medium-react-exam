@@ -8,12 +8,9 @@ export default function ModalAdd({isClicked,
   count,
   addHandler,
   addCardHandler,
-  isTargetted,
-  isSelected,
   setClick
    }) {
 
-    let [checkClick, setcheckClick] = useState(false)
 
   return (
     <>

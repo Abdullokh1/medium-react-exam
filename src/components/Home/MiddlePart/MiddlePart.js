@@ -2,10 +2,8 @@ import { Checkbox } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ModalAdd from '../../ModalAdd/ModalAdd'
-import Save from '../MiddlePart/Save/Save.scss'
-
 import './MiddlePart.scss'
-
+import './Save/Save.scss'
 
 
 export default function MiddlePart({
@@ -20,12 +18,13 @@ export default function MiddlePart({
   addHandler,
   addCardHandler,
   setSaved, 
-  homePublish
+  homePublish,
+  isClicked,
+  setClick
   }) {
 
 
   let [isSelected, setSelected] = useState(false)
-  let [isClicked, setClick] = useState(false)
 
 
   const isTargetted = () =>{
@@ -155,6 +154,7 @@ export default function MiddlePart({
 
           )
         })}
+
       </ul>
       
 
